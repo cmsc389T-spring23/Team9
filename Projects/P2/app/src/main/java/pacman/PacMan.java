@@ -16,7 +16,16 @@ public class PacMan {
   }
 
   public ArrayList<Location> get_valid_moves() {
-    return null;
+    ArrayList<Location> validMovesList = new ArrayList<Location>();
+    for(int i = 0; i < 2; i++){
+      for(int j = 0; j < 2; j++){
+        if(myMap.getLoc(new Location(i,j)).contains(Map.Type.WALL) == false){
+          validMovesList.add(new Location(i,j));
+        }
+      }
+    }
+
+    return validMovesList;
   }
 
   public boolean move() {
