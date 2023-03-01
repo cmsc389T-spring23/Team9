@@ -17,14 +17,22 @@ public class PacMan {
 
   public ArrayList<Location> get_valid_moves() {
     ArrayList<Location> validMovesList = new ArrayList<Location>();
-    for(int i = 0; i < 2; i++){
-      for(int j = 0; j < 2; j++){
-        if(myMap.getLoc(new Location(i,j)).contains(Map.Type.WALL) == false){
+    int iMax = this.myLoc.x + 2;
+    int jMax = this.myLoc.y + 2;
+
+    for(int i = this.myLoc.x; i < iMax; i++){
+      for(int j = this.myLoc.y; j < jMax; j++){
+        
+        // first check is because we need getLoc to get implemented (otherwise gradle gives null pointer exception)
+        if(myMap.getLoc(new Location(i,j)) == null || myMap.getLoc(new Location(i,j)).contains(Map.Type.WALL)){
           validMovesList.add(new Location(i,j));
-        }
+          System.out.println(i);
+          System.out.println(j);
+        }  
       }
     }
-
+    // remove the position pacman is already at
+    validMovesList.remove(0);
     return validMovesList;
   }
 
