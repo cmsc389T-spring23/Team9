@@ -10,6 +10,9 @@
   current value). If statement checks if the current location on the map is a Wall. If it is not a wall, we can go ahead and add
   the location to the result.
 
+![Alt text](screenshot_1.PNG)
+![Alt text](screenshot_2.PNG)
+
 * Pacman-get_valid_moves Test --> Calls get_valid_moves and compares the arraylist result returned to the expected result
 
 * Ghost-move Implementation --> Uses Java Random generator to generate a random number within the size of the available moves
