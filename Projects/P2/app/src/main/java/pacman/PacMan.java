@@ -31,7 +31,7 @@ public class PacMan {
         return true;
       }
     }
-    return false
+    return false;
   }
 
   public JComponent consume() {
