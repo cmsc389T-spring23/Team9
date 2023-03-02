@@ -35,6 +35,12 @@ public class Ghost {
   }
 
   public boolean attack() {
-    return false;
+    for(int i = -1; i <= 1; i++){
+      if(myMap.getLoc(new Location(myLoc.x + i, myLoc.y)).contains(Map.Type.PACMAN) || 
+      myMap.getLoc(new Location(myLoc.x, myLoc.y + i)).contains(Map.Type.PACMAN)){
+        return true;
+      }
+    }
+    return false
   }
 }
