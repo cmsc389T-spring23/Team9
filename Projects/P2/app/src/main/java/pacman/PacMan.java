@@ -24,10 +24,20 @@ public class PacMan {
   }
 
   public boolean is_ghost_in_range() {
+    //Check surroundings of current location using for loop
+    for(int i = -1; i <= 1; i++){
+      if(myMap.getLoc(new Location(myLoc.x + i, myLoc.y)).contains(Map.Type.GHOST) || 
+      myMap.getLoc(new Location(myLoc.x, myLoc.y + i)).contains(Map.Type.GHOST)){
+        return true;
+      }
+    }
     return false;
   }
 
   public JComponent consume() {
+     if (myMap.getLoc(myLoc).contains(Map.Type.COOKIE))
+      return myMap.eatCookie(myName);
+
     return null;
   }
 }
