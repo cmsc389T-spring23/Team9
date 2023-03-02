@@ -31,13 +31,13 @@ public class PacMan {
         return true;
       }
     }
-    return false
+    return false;
   }
 
   public JComponent consume() {
-	 if (myMap.getLoc(myLoc).contains(Map.Type.COOKIE))
+    if (myMap.getLoc(myLoc).contains(Map.Type.COOKIE))
       return myMap.eatCookie(myName);
 
-    return null; 
- }
+    return null;
+  }
 }
