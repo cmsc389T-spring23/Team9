@@ -41,6 +41,6 @@ public class Ghost {
         return true;
       }
     }
-    return false
+    return false;
   }
 }
