@@ -78,11 +78,6 @@ public class Map {
     return field.get(loc);
   }
 
-  public HashSet<Type> getLoc(Location loc) {
-    // wallSet and emptySet will help you write this method
-    return null;
-  }
-
   public boolean attack(String Name) {
     // update gameOver
     return false;
@@ -93,9 +88,9 @@ public class Map {
     // the id for a cookie at (10, 1) is tok_x10_y1
     Location curr = locations.get(name);
     if(curr != null){
-      if(field.get(curr).contains(COOKIE)){
+      if(field.get(curr).contains(Type.COOKIE)){
         cookies--;
-        field.get(curr).remove(COOKIE);
+        field.get(curr).remove(Type.COOKIE);
         return components.get(name);
       }
     }
