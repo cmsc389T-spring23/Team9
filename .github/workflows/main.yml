@@ -1,0 +1,12 @@
+name: Pacman CI
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build Pacman
+        run: |
+          echo Hello World
