@@ -10,4 +10,4 @@ jobs:
       - name: Build Pacman
         run: |
           echo Hello World
-          javac -cp "junit-4.10.jar;." TestPacManMove.java
+          javac -cp "junit-4.10.jar;." Projects\P2\app\src\test\java\pacman\TestPacManMove.java
