@@ -2,7 +2,7 @@ name: Pacman CI
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
-  build:
+  build:  
     runs-on: ubuntu-latest
     container: openjdk
     steps:
@@ -10,4 +10,4 @@ jobs:
       - name: Build Pacman
         run: |
           echo Hello World
-          javac *.java
+          javac -cp "junit-4.10.jar:." src/java/pacman/*.java 
