@@ -114,7 +114,7 @@ jobs:
           cd Projects/P2
           ./gradlew test --parallel --tests TestMapMove
   
-   ghost_pacman_in_range:
+  ghost_pacman_in_range:
     runs-on: ubuntu-latest
     container: openjdk:13
     steps:
@@ -125,7 +125,7 @@ jobs:
           ./gradlew test --parallel --tests TestPacManInRange
 
 
-    pacman_consume:
+  pacman_consume:
     runs-on: ubuntu-latest
     container: openjdk:13
     steps:
