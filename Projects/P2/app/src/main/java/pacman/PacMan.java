@@ -16,20 +16,24 @@ public class PacMan {
   }
 
   public ArrayList<Location> get_valid_moves() {
-    ArrayList<Location> validMoves = new ArrayList<Location>();
-    
-    for (int dx = -1; dx <= 1; dx++) {
-      for (int dy = -1; dy <= 1; dy++) {
-        Location newLocation = myLoc.shift(dx, dy);
+    ArrayList<Location> validMovesList = new ArrayList<Location>();
+    int iMax = this.myLoc.x + 2;
+    int jMax = this.myLoc.y + 2;
+
+    for(int i = this.myLoc.x; i < iMax; i++){
+      for(int j = this.myLoc.y; j < jMax; j++){
         
-        HashSet<Map.Type> types = myMap.getLoc(newLocation);
-        if (types.contains(Map.Type.EMPTY) ||
-            (types.size() == 1 && types.contains(Map.Type.COOKIE)))
-          validMoves.add(newLocation); 
+        // first check is because we need getLoc to get implemented (otherwise gradle gives null pointer exception)
+        if(myMap.getLoc(new Location(i,j)) == null || myMap.getLoc(new Location(i,j)).contains(Map.Type.WALL)){
+          validMovesList.add(new Location(i,j));
+          System.out.println(i);
+          System.out.println(j);
+        }  
       }
     }
-
-    return validMoves;
+    // remove the position pacman is already at
+    validMovesList.remove(0);
+    return validMovesList;
   }
 
   public boolean move() {
