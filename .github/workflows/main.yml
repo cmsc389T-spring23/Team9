@@ -74,6 +74,34 @@ jobs:
           cd Projects/P2
           ./gradlew test --parallel --tests TestMapGetLoc
 
+  map_eat_cookie:
+    runs-on: ubuntu-latest
+    container: openjdk:13
+    steps:
+      - uses: actions/checkout@v2
+      - name: map eat cookie
+        run: |
+          cd Projects/P2
+          ./gradlew test --parallel --tests TestMapEatCookie
+  
+  pacman_is_ghost_in_range:
+    runs-on: ubuntu-latest
+    container: openjdk:13
+    steps:
+      - uses: actions/checkout@v2
+      - name: pacman is ghost in range
+        run: |
+          cd Projects/P2
+          ./gradlew test --parallel --tests TestGhostInRange
 
+  ghost_attack:
+    runs-on: ubuntu-latest
+    container: openjdk:13
+    steps:
+      - uses: actions/checkout@v2
+      - name: ghost attack
+        run: |
+          cd Projects/P2
+          ./gradlew test --parallel --tests TestGhostAttack
 
 
