@@ -16,5 +16,6 @@ public class TestMapAttack extends TestCase {
 
     // unsuccessful attack should make sure the game is not over
     assertTrue(frame.getMap().isGameOver() == false);
+
   }
 }

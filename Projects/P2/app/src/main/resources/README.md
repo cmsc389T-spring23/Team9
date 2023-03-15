@@ -21,3 +21,15 @@
 
 * Map-attack Implementation --> Retrieves location based on the name parameter passed into the method. Removes Pacman from the field and changes the gameOver instance variable to true
 * Map-attack Test --> Calls ghost attack and checks the status of the gameOver variable
+
+* Pacman-is_ghost_in_range Implementation--> uses two for loops to iterate through the spaces directly horizontal and vertical to the current location of Pacman. If one of these spaces has Type.GHOST, true is returned.
+
+* Pacman-is_ghost_in_range Test --> Creates a new map, and adds a ghost and pacman directly next to each other on the map. Calls is_ghost_in_range on the pacman and returns the output
+
+* Map-eatCookie Implementation --> Checks to see if the current location of packman also contains a cookie. If so, the cookie will be deleted from field, and the CookieComponent is returned
+
+* Map-eatCookie Test --> Creates a new map, and adds a cookie and pacman in the same location on the map. Calls eatCookie on the map and returns the output
+
+* Ghost-attack Implementation --> uses two for loops to iterate through the spaces directly horizontal and vertical to the current location. If one of these spaces has Type.PACMAN, true is returned.
+
+* Ghost-attack Test --> Creates a new map, and adds a ghost and pacman directly next to each other on the map. Calls attack on the Ghost and returns the output
