@@ -16,7 +16,20 @@ public class PacMan {
   }
 
   public ArrayList<Location> get_valid_moves() {
-    return null;
+    ArrayList<Location> validMoves = new ArrayList<Location>();
+    
+    for (int dx = -1; dx <= 1; dx++) {
+      for (int dy = -1; dy <= 1; dy++) {
+        Location newLocation = myLoc.shift(dx, dy);
+        
+        HashSet<Map.Type> types = myMap.getLoc(newLocation);
+        if (types.contains(Map.Type.EMPTY) ||
+            (types.size() == 1 && types.contains(Map.Type.COOKIE)))
+          validMoves.add(newLocation); 
+      }
+    }
+
+    return validMoves;
   }
 
   public boolean move() {
