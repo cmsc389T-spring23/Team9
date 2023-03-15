@@ -20,6 +20,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: pacman valid moves
         run: |
+          cd Projects/P2
           ./gradlew test --parallel --tests TestPacManValidMoves
 
   ghost_move:
@@ -29,6 +30,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: ghost move
         run: |
+          cd Projects/P2
           ./gradlew test --parallel --tests TestGhostMove
 
   map_attack:
@@ -38,6 +40,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: map attack
         run: |
+          cd Projects/P2
           ./gradlew test --parallel --tests TestMapAttack
 
   # adding tests for missing functions
@@ -48,6 +51,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: pacman move
         run: |
+          cd Projects/P2
           ./gradlew test --parallel --tests TestPacManMove
 
   ghost_valid_moves:
@@ -57,6 +61,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: ghost valid moves
         run: |
+          cd Projects/P2
           ./gradlew test --parallel --tests TestGhostValidMoves
 
   map_get_loc:
@@ -66,6 +71,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: map get loc
         run: |
+          cd Projects/P2
           ./gradlew test --parallel --tests TestMapGetLoc
 
 
