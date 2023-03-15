@@ -17,5 +17,6 @@ public class TestPacManValidMoves extends TestCase {
     answers.add(new Location(10,11));
     answers.add(new Location(10,12));
     assertEquals(locations, answers);
+
   }
 }
