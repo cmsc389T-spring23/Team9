@@ -1,6 +1,7 @@
 package pacman;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Random;
 
 public class Ghost {
   String myName;
@@ -18,14 +19,20 @@ public class Ghost {
   }
 
   public boolean move() {
-     ArrayList<Location> validMoves = get_valid_moves();
-    int choice = (int) (Math.random() * validMoves.size());
+    // get valid moves
+    ArrayList<Location> validMoves = get_valid_moves();
 
-    if (validMoves.size() == 0 ||
-        !myMap.move(myName, validMoves.get(choice), Map.Type.GHOST))
+
+    // legality check
+    if(validMoves == null || validMoves.size() == 0){
       return false;
+    }
 
-    this.myLoc = validMoves.get(choice);
+    // choose random location
+    Random rand = new Random();
+    int randomLoc = rand.nextInt(validMoves.size());
+    Location chosenLoc = validMoves.get(randomLoc);
+    this.myLoc = chosenLoc;
     return true;
   }
 
