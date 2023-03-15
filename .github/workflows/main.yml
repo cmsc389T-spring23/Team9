@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build Pacman
-        working-directory: Projects/P2
+        working-directory: P2
         run: |
           echo Hello World
           javac -cp ".:junit-4.10.jar" *.java
