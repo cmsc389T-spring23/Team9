@@ -79,8 +79,13 @@ public class Map {
   }
 
   public boolean attack(String Name) {
-      gameOver = true;
-    return true;
+    // get the current location of pacman and remove it from the map field
+    Location pacManLocation = locations.get(Name);
+    this.field.get(pacManLocation).remove(Type.PACMAN);
+
+    // update gameOver
+    this.gameOver = true;
+    return gameOver;
   }
 
   public JComponent eatCookie(String name) {
