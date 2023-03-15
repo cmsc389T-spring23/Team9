@@ -4,10 +4,11 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   build:  
     runs-on: ubuntu-latest
-    container: openjdk
+    container: openjdk:13
     steps:
       - uses: actions/checkout@v2
       - name: Build Pacman
+        working-directory: Projects/P2
         run: |
           echo Hello World
-          javac -cp "junit-4.10.jar:Projects/P2/app/src/test/java/pacman" TestMapEatCookie.java
+          javac -cp ".:junit-4.10.jar" *.java
