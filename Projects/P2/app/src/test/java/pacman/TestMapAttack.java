@@ -6,6 +6,9 @@ import java.awt.Color;
 public class TestMapAttack extends TestCase {
 
   public void testMapAttack() throws FileNotFoundException {
-    return;
+    NoFrame frame = new NoFrame();
+    Ghost ghost = frame.addGhost(new Location(9, 11), "blinky", Color.red);
+    PacMan pacman = frame.addPacMan(new Location(9, 12));
+    assertTrue(frame.getMap().attack("blinky"));
   }
 }
