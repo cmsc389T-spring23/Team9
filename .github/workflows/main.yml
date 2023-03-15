@@ -40,6 +40,34 @@ jobs:
       run: |
         ./gradlew test --parallel --tests TestMapAttack
 
+  # adding tests for missing functions
+  pacman_move:
+    runs-on: ubuntu-latest
+    container: openjdk:13
+    steps:
+      - uses: actions/checkout@v2
+      - name: pacman move
+      run: |
+        ./gradlew test --parallel --tests TestPacManMove
+
+  ghost_valid_moves:
+    runs-on: ubuntu-latest
+    container: openjdk:13
+    steps:
+      - uses: actions/checkout@v2
+      - name: ghost valid moves
+      run: |
+        ./gradlew test --parallel --tests TestGhostValidMoves
+
+  map_get_loc:
+    runs-on: ubuntu-latest
+    container: openjdk:13
+    steps:
+      - uses: actions/checkout@v2
+      - name: map get loc
+      run: |
+        ./gradlew test --parallel --tests TestMapGetLoc
+
 
 
 
