@@ -10,5 +10,5 @@ jobs:
       - name: Build Pacman
         run: |
           echo Hello World
-          cd Projects/P2/app/src/test/java/pacman
-          javac -cp ".:junit-4.10.jar" *.java
+          cd Projects/P2
+          ./gradlew build
