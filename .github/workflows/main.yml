@@ -11,4 +11,4 @@ jobs:
         working-directory: Projects/P2
         run: |
           echo Hello World
-          javac -cp ".:junit-4.10.jar" *.java
+          gradle build
