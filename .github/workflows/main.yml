@@ -103,5 +103,38 @@ jobs:
         run: |
           cd Projects/P2
           ./gradlew test --parallel --tests TestGhostAttack
+  
+  map_move:
+    runs-on: ubuntu-latest
+    container: openjdk:13
+    steps:
+      - uses: actions/checkout@v2
+      - name: map move
+        run: |
+          cd Projects/P2
+          ./gradlew test --parallel --tests TestMapMove
+  
+   ghost_pacman_in_range:
+    runs-on: ubuntu-latest
+    container: openjdk:13
+    steps:
+      - uses: actions/checkout@v2
+      - name: ghost pacman in range
+        run: |
+          cd Projects/P2
+          ./gradlew test --parallel --tests TestPacManInRange
+
+
+    pacman_consume:
+    runs-on: ubuntu-latest
+    container: openjdk:13
+    steps:
+      - uses: actions/checkout@v2
+      - name: pacman consume
+        run: |
+          cd Projects/P2
+          ./gradlew test --parallel --tests TestPacManConsume
+
+
 
 
