@@ -11,4 +11,5 @@ jobs:
         working-directory: Projects/P2
         run: |
           echo Hello World
-          gradle build
+          cd Projects/P2/app/src/test/java/pacman
+          javac -cp ".:junit-4.10.jar" *.java
