@@ -11,7 +11,7 @@ jobs:
         run: |
           echo Hello World
           cd Projects/P2
-          ./gradlew build
+          ./gradlew build testClasses -x test
   
   pacman_valid_moves:
     runs-on: ubuntu-latest
