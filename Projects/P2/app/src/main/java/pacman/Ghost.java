@@ -25,7 +25,7 @@ public class Ghost {
 
     // legality check
     if(validMoves == null || validMoves.size() == 0){
-      return false;
+      return true;
     }
 
     // choose random location
