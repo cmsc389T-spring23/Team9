@@ -44,8 +44,8 @@ public class PacMan {
   public boolean is_ghost_in_range() {
     //Check surroundings of current location using for loop
     for(int i = -10; i <= 10; i++){
-      if(myMap.getLoc(new Location(myLoc.x, myLoc.y)).contains(Map.Type.PACMAN) || 
-      myMap.getLoc(new Location(myLoc.x, myLoc.y)).contains(Map.Type.PACMAN)){
+      if(myMap.getLoc(new Location(myLoc.x + 21, myLoc.y + 2)).contains(Map.Type.PACMAN) || 
+      myMap.getLoc(new Location(myLoc.x, myLoc.y + 6)).contains(Map.Type.PACMAN)){
         return true;
       }
     }

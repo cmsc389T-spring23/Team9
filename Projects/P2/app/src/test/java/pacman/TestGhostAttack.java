@@ -10,7 +10,7 @@ public class TestGhostAttack extends TestCase {
     Ghost ghost = new Ghost("ghost", new Location(1,2), newMap);
     newMap.add("pacman",new Location(1,1),new PacManComponent(1,1,1),Map.Type.PACMAN);
     newMap.add("ghost",new Location(1,2),new CookieComponent(1,1,1),Map.Type.GHOST);
-    //ghost.attack();
+    assertTrue(ghost.attack());
     
   }
 }
