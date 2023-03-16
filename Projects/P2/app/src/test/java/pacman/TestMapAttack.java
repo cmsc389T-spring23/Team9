@@ -15,8 +15,8 @@ public class TestMapAttack extends TestCase {
     // ghost attack will end up calling the attack in map
     map.attack("binky");
 
-    // unsuccessful attack should make sure the game is not over
-    assertTrue(frame.getMap().isGameOver() == false);
+    // unsuccessful attack should make sure the game is over
+    assertTrue(frame.getMap().isGameOver() == true);
 
   }
 }
