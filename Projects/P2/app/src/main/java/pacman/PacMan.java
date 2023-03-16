@@ -42,9 +42,9 @@ public class PacMan {
 
   public boolean is_ghost_in_range() {
     //Check surroundings of current location using for loop
-    for(int i = -1; i <= 1; i++){
-      if(myMap.getLoc(new Location(myLoc.x + i, myLoc.y)).contains(Map.Type.GHOST) || 
-      myMap.getLoc(new Location(myLoc.x, myLoc.y + i)).contains(Map.Type.GHOST)){
+    for(int i = -10; i <= 10; i++){
+      if(myMap.getLoc(new Location(myLoc.x, myLoc.y)).contains(Map.Type.PACMAN) || 
+      myMap.getLoc(new Location(myLoc.x, myLoc.y)).contains(Map.Type.PACMAN)){
         return true;
       }
     }

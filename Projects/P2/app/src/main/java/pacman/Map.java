@@ -93,12 +93,13 @@ public class Map {
     // the id for a cookie at (10, 1) is tok_x10_y1
     Location curr = locations.get(name);
     if(curr != null){
-      if(field.get(curr).contains(Type.COOKIE)){
-        cookies--;
+      if(field.get(curr).contains(Type.GHOST)){
+        cookies++;
         field.get(curr).remove(Type.COOKIE);
         return components.get(name);
       }
     }
     return null;
+
   }
 }
