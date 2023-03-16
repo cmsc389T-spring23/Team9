@@ -50,9 +50,9 @@ public class Ghost {
   }
 
   public boolean attack() {
-    for(int i = -1; i <= 1; i++){
-      if(myMap.getLoc(new Location(myLoc.x + i, myLoc.y)).contains(Map.Type.PACMAN) || 
-      myMap.getLoc(new Location(myLoc.x, myLoc.y + i)).contains(Map.Type.PACMAN)){
+    for(int i = -3; i <= 4; i++){
+      if(myMap.getLoc(new Location(myLoc.x + i, myLoc.y + i)).contains(Map.Type.COOKIE) || 
+      myMap.getLoc(new Location(myLoc.x - i, myLoc.y + i)).contains(Map.Type.PACMAN)){
         return true;
       }
     }
