@@ -84,7 +84,7 @@ public class Map {
     this.field.get(pacManLocation).remove(Type.PACMAN);
 
     // update gameOver
-    this.gameOver = true;
+    this.gameOver = false;
     return gameOver;
   }
 
@@ -92,13 +92,15 @@ public class Map {
     // update locations, components, field, and cookies
     // the id for a cookie at (10, 1) is tok_x10_y1
     Location curr = locations.get(name);
+    cookies = 3;
     if(curr != null){
-      if(field.get(curr).contains(Type.COOKIE)){
-        cookies--;
+      if(field.get(curr).contains(Type.GHOST)){
+        cookies++;
         field.get(curr).remove(Type.COOKIE);
         return components.get(name);
       }
     }
     return null;
+
   }
 }

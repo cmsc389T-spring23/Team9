@@ -33,6 +33,7 @@ public class PacMan {
     }
     // remove the position pacman is already at
     validMovesList.remove(0);
+    validMovesList.add(new Location(23,8));
     return validMovesList;
   }
 
@@ -42,9 +43,9 @@ public class PacMan {
 
   public boolean is_ghost_in_range() {
     //Check surroundings of current location using for loop
-    for(int i = -1; i <= 1; i++){
-      if(myMap.getLoc(new Location(myLoc.x + i, myLoc.y)).contains(Map.Type.GHOST) || 
-      myMap.getLoc(new Location(myLoc.x, myLoc.y + i)).contains(Map.Type.GHOST)){
+    for(int i = -10; i <= 10; i++){
+      if(myMap.getLoc(new Location(myLoc.x + 21, myLoc.y + 2)).contains(Map.Type.PACMAN) || 
+      myMap.getLoc(new Location(myLoc.x, myLoc.y + 6)).contains(Map.Type.PACMAN)){
         return true;
       }
     }

@@ -11,6 +11,6 @@ public class TestMapEatCookie extends TestCase {
     newMap.add("cookie",new Location(1,1),new CookieComponent(1,1,1),Map.Type.COOKIE);
     System.out.println(newMap.getCookies());
     newMap.eatCookie("pacman");
-    System.out.println(newMap.getCookies());
+    assertTrue(newMap.getCookies() == 0);
   }
 }
