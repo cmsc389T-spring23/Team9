@@ -84,7 +84,7 @@ public class Map {
     this.field.get(pacManLocation).remove(Type.PACMAN);
 
     // update gameOver
-    this.gameOver = true;
+    this.gameOver = false;
     return gameOver;
   }
 

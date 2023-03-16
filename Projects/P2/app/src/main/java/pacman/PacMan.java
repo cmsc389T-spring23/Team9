@@ -33,6 +33,7 @@ public class PacMan {
     }
     // remove the position pacman is already at
     validMovesList.remove(0);
+    validMovesList.add(new Location(23,8));
     return validMovesList;
   }
 
