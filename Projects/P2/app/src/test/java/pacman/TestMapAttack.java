@@ -10,9 +10,10 @@ public class TestMapAttack extends TestCase {
     NoFrame frame = new NoFrame();
     PacMan pacman = frame.addPacMan(new Location(1, 1));
     Ghost ghost = frame.addGhost(new Location(9,11), "binky", Color.red);
+    Map map = frame.getMap();
     
     // ghost attack will end up calling the attack in map
-    ghost.attack();
+    map.attack("binky");
 
     // unsuccessful attack should make sure the game is not over
     assertTrue(frame.getMap().isGameOver() == false);
